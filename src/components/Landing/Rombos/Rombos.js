@@ -1,5 +1,5 @@
 import React from 'react'
-import './Rombos'
+import './Rombos.css'
 
 const Rombos = () => {
   return (

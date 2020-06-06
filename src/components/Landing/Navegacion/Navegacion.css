@@ -1,0 +1,20 @@
+.Navegacion {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Navegacion__logo {
+  padding: 1em;
+  font-weight: bold;
+}
+
+.Navegacion__links {
+  display: flex;
+  padding: 1em;
+}
+
+.Navegacion__link {
+  font-size: .8em;
+  margin-left: 2.5em;
+  font-weight: 500;
+}
