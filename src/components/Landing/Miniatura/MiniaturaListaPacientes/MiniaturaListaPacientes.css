@@ -4,8 +4,21 @@
   align-items: center;
 }
 
+.MiniaturaListaPacientes__contenedor_categoria {
+  width: 100%;
+}
+
 .MiniaturaListaPacientes__categoria {
   width: 100%;
+}
+
+.MiniaturaListaPacientes__titulo_categoria {
+  padding: 1em;
+  font-size: .7em;
+  background-color: red;
+  color: white;
+  width: 100%;
+  font-weight: 600;
 }
 
 .MiniaturaListaPacientes__fila {
@@ -19,4 +32,10 @@
   height: 1.5em;
   border-radius: 100%;
   margin-right: .5em;
+}
+
+.MiniaturaListaPacientes__nombre {
+  font-size: .7em;
+  font-weight: 500;
+  text-transform: capitalize;
 }

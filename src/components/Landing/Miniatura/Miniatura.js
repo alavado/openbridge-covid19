@@ -2,12 +2,6 @@ import React from 'react'
 import './Miniatura.css'
 import MiniaturaListaPacientes from './MiniaturaListaPacientes';
 
-// Extremadamente vulnerable
-// Muy vulnerable
-// vulnerable
-// poco vulnerable
-// sin riesgo actua
-
 const Miniatura = () => {
 
   return (
