@@ -1,10 +1,11 @@
 import React from 'react'
 import './App.css'
+import Landing from '../Landing'
 
 const App = () => {
   return (
     <div className="App">
-      GG BIO
+      <Landing />
     </div>
   )
 }
