@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  user-select: none;
 }
 
 .MiniaturaListaPacientes__contenedor_categoria {
@@ -12,19 +13,36 @@
   width: 100%;
 }
 
-.MiniaturaListaPacientes__titulo_categoria {
-  padding: 1em;
-  font-size: .7em;
-  background-color: red;
+.MiniaturaListaPacientes__encabezado_categoria {
+  padding: .5em 1em;
   color: white;
   width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.MiniaturaListaPacientes__titulo_categoria {
+  font-size: .7em;
   font-weight: 600;
+  margin-left: 1em;
 }
 
 .MiniaturaListaPacientes__fila {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: .5em 1em;
+  cursor: pointer;
+  transition: all .1s ease-in-out;
+}
+
+.MiniaturaListaPacientes__fila_seccion_izquierda {
+  display: flex;
+  align-items: center;
+}
+
+.MiniaturaListaPacientes__fila:hover {
+  background-color: rgba(0, 0, 0, .125);
 }
 
 .MiniaturaListaPacientes__avatar {
@@ -38,4 +56,17 @@
   font-size: .7em;
   font-weight: 500;
   text-transform: capitalize;
+}
+
+.MiniaturaListaPacientes__score {
+  color: white;
+  font-weight: 600;
+  font-size: .65em;
+  height: 2.2em;
+  width: 2.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  opacity: .8;
 }

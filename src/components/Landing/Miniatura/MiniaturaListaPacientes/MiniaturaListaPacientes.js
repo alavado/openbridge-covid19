@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Icon, InlineIcon } from '@iconify/react'
+import { InlineIcon } from '@iconify/react'
 import seniorIcon from '@iconify/icons-vs/senior'
 import './MiniaturaListaPacientes.css'
 import { nombreAleatorio } from '../../../helpers/nombres'
+import { shuffle } from 'lodash'
 
 axios.defaults.headers.common['X-API-KEY'] = '92f91323e700258c0fb7811bcfd84f'
 const categorias = [
@@ -35,15 +36,23 @@ const MiniaturaListaPacientes = () => {
 
   useEffect(() => {
     async function fetchPacientes() {
-      const pacientesM = await axios.get('https://uifaces.co/api?from_age=60&to_age=100&gender[]=male')
-      const pacientesF = await axios.get('https://uifaces.co/api?from_age=60&to_age=100&gender[]=female')
-      setPacientes([...pacientesM.data.map(d => ({ ...d, g: 'm' })), ...pacientesF.data.map(d => ({ ...d, g: 'f' }))].map(d => ({
-        nombre: nombreAleatorio(d.g),
-        foto: d.photo
-      })))
+      const { data: pacientesM } = await axios.get('https://uifaces.co/api?from_age=60&to_age=100&gender[]=male&limit=15')
+      const { data: pacientesF } = await axios.get('https://uifaces.co/api?from_age=60&to_age=100&gender[]=female&limit=15')
+      setPacientes(
+        shuffle([...pacientesM.map(d => ({ ...d, g: 'm' })), ...pacientesF.map(d => ({ ...d, g: 'f' }))])
+          .map((d, i) => ({
+            nombre: nombreAleatorio(d.g),
+            foto: d.photo,
+            score: 90 - i * 3
+        }))
+      )
     }
     fetchPacientes()
   }, [])
+
+  if (pacientes.length === 0) {
+    return null
+  }
 
   const pacientesPorCategoria = pacientes.length / categorias.length
 
@@ -54,25 +63,34 @@ const MiniaturaListaPacientes = () => {
           className="MiniaturaListaPacientes__contenedor_categoria"
           key={`contenedor-categoria-${i}`}
         >
-          <h1
-            className="MiniaturaListaPacientes__titulo_categoria"
+          <div
+            className="MiniaturaListaPacientes__encabezado_categoria"
             style={{ backgroundColor: categoria.color }}
           >
-            {categoria.nombre}
-          </h1>
+            <InlineIcon icon={seniorIcon} />
+            <h1 className="MiniaturaListaPacientes__titulo_categoria">{categoria.nombre}</h1>
+          </div>
           <div className="MiniaturaListaPacientes__categoria">
             {pacientes.slice(i * pacientesPorCategoria, (i + 1) * pacientesPorCategoria).map((p, i) => (
               <div
                 key={`miniatura-paciente-${i}`}
                 className="MiniaturaListaPacientes__fila"
               >
-                <img
-                  className="MiniaturaListaPacientes__avatar"
-                  src={p.foto}
-                  alt={`foto del paciente ${p.nombre}`}
-                />
-                <div className="MiniaturaListaPacientes__nombre">
-                  {p.nombre}
+                <div className="MiniaturaListaPacientes__fila_seccion_izquierda">
+                  <img
+                    className="MiniaturaListaPacientes__avatar"
+                    src={p.foto}
+                    alt={`foto del paciente ${p.nombre}`}
+                  />
+                  <div className="MiniaturaListaPacientes__nombre">
+                    {p.nombre}
+                  </div>
+                </div>
+                <div
+                  className="MiniaturaListaPacientes__score"
+                  style={{ backgroundColor: categoria.color }}
+                >
+                  {p.score}
                 </div>
               </div>
             ))}
