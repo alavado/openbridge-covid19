@@ -5,7 +5,7 @@ const Navegacion = () => {
   return (
     <div className="Navegacion">
       <div className="Navegacion__logo">
-        GG BIO
+        <div className="Navegacion__nombre">GG BIO</div>
       </div>
       <nav className="Navegacion__links">
         <div className="Navegacion__link">Inicio</div>

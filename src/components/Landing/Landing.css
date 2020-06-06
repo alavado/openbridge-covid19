@@ -10,23 +10,24 @@
   flex: 1;
 }
 
-.Landing__header {
+.Landing__principal {
+  min-height: 90vh;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  margin-left: 1em;
 }
 
-.Landing__logo {
-  padding: 1em;
-  font-weight: bold;
-}
-
-.Landing__links {
+.Landing__titulo {
+  font-size: 1.75em;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-top: -3em;
+  max-width: 500px;
   display: flex;
-  padding: 1em;
+  flex-direction: column;
 }
 
-.Landing__link {
-  font-size: .8em;
-  margin-left: 2.5em;
-  font-weight: 500;
+.Landing__cta {
+  cursor: pointer;
 }

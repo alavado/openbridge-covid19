@@ -1,0 +1,7 @@
+.Miniatura {
+  background-color: white;
+  height: 500px;
+  width: 400px;
+  border-radius: 1.5em;
+  box-shadow: 0 .15em 1em rgba(0, 0, 0, .1);
+}

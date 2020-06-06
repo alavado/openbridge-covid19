@@ -5,7 +5,11 @@
 
 .Navegacion__logo {
   padding: 1em;
+}
+
+.Navegacion__nombre {
   font-weight: bold;
+  font-size: 1.1em;
 }
 
 .Navegacion__links {
@@ -15,6 +19,6 @@
 
 .Navegacion__link {
   font-size: .8em;
-  margin-left: 2.5em;
-  font-weight: 500;
+  margin-left: 3.25em;
+  font-weight: 600;
 }
