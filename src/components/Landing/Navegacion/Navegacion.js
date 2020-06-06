@@ -1,11 +1,13 @@
 import React from 'react'
+import { InlineIcon } from '@iconify/react'
+import listHighPriority from '@iconify/icons-cil/list-high-priority'
 import './Navegacion.css'
 
 const Navegacion = () => {
   return (
     <div className="Navegacion">
       <div className="Navegacion__logo">
-        <div className="Navegacion__nombre">GG BIO</div>
+        <div className="Navegacion__nombre"><InlineIcon icon={listHighPriority} /> GG BIO</div>
       </div>
       <nav className="Navegacion__links">
         <div className="Navegacion__link">Inicio</div>
