@@ -1,10 +1,6 @@
-import React, { useEffect } from 'react'
-import axios from 'axios'
-import { Icon, InlineIcon } from '@iconify/react';
-import seniorIcon from '@iconify/icons-vs/senior';
+import React from 'react'
 import './Miniatura.css'
-
-axios.defaults.headers.common['X-API-KEY'] = '92f91323e700258c0fb7811bcfd84f'
+import MiniaturaListaPacientes from './MiniaturaListaPacientes';
 
 // Extremadamente vulnerable
 // Muy vulnerable
@@ -13,11 +9,6 @@ axios.defaults.headers.common['X-API-KEY'] = '92f91323e700258c0fb7811bcfd84f'
 // sin riesgo actua
 
 const Miniatura = () => {
-
-  useEffect(() => {
-    axios.get('https://uifaces.co/api?from_age=50&to_age=100')
-     .then(res => console.log(res))
-  }, [])
 
   return (
     <div className="Miniatura">
@@ -29,7 +20,9 @@ const Miniatura = () => {
         </div>
         <div className="Miniatura__titulo">GG BIO</div>
       </div>
-      {/* <InlineIcon icon={seniorIcon} /> */}
+      <div className="Miniatura__cuerpo">
+        <MiniaturaListaPacientes />
+      </div>
     </div>
   )
 }
