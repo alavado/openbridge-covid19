@@ -3,7 +3,7 @@ import axios from 'axios'
 import { InlineIcon } from '@iconify/react'
 import seniorIcon from '@iconify/icons-vs/senior'
 import './MiniaturaListaPacientes.css'
-import { nombreAleatorio } from '../../../helpers/nombres'
+import { nombreAleatorio } from '../../../../helpers/nombres'
 import { shuffle } from 'lodash'
 
 axios.defaults.headers.common['X-API-KEY'] = '92f91323e700258c0fb7811bcfd84f'

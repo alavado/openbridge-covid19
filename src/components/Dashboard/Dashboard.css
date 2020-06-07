@@ -10,8 +10,21 @@
   align-items: center;
   padding: .5em 1em;
   animation: Dashboard__barra-aparece .5s ease-in-out .5s both;
-  box-shadow: 0em .05em .1em rgba(0, 0, 0, 0.1);
-  background: linear-gradient(120deg, rgba(47, 141, 251, 0.92) 49.04%, #2FF2DA 90%);
+  box-shadow: 0em .05em .25em rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(45deg, rgba(47, 141, 251, 0.92) 0%, #2FF2DA 100%);
+}
+
+@keyframes Dashboard__barra-aparece {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.Dashboard__logo {
+  cursor: pointer;
 }
 
 .Dashboard__logo_icono {
@@ -27,14 +40,23 @@
   color: white;
   font-weight: 500;
   font-size: .8em;
-  text-shadow: 0em .05em .5em rgba(0, 0, 0, 0.25);
+  text-shadow: 0em .05em .5em rgba(0, 0, 0, 0.5);
 }
 
-@keyframes Dashboard__barra-aparece {
+.Dashboard__contenido {
+  display: flex;
+  flex: 1;
+}
+
+.Dashboard__principal {
+  animation: Dashboard__principal-aparece .5s ease-in-out .5s both;
+}
+
+@keyframes Dashboard__principal-aparece {
   0% {
-    transform: translateY(-100%);
+    opacity: 0;
   }
   100% {
-    transform: translateY(0%);
+    opacity: 1;
   }
 }

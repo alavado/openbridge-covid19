@@ -1,6 +1,6 @@
-import nombresHombre from '../../data/nombres/hombre.json'
-import nombresMujer from '../../data/nombres/mujer.json'
-import apellidos from '../../data/nombres/apellidos.json'
+import nombresHombre from '../data/nombres/hombre.json'
+import nombresMujer from '../data/nombres/mujer.json'
+import apellidos from '../data/nombres/apellidos.json'
 
 export const nombreAleatorio = genero => {
   const nombres = genero === 'm' ? nombresHombre : nombresMujer
