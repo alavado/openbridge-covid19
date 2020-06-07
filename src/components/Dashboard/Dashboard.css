@@ -41,6 +41,7 @@
   font-weight: 500;
   font-size: .8em;
   text-shadow: 0em .05em .5em rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
 .Dashboard__contenido {
@@ -49,6 +50,8 @@
 }
 
 .Dashboard__principal {
+  flex: 1;
+  display: flex;
   animation: Dashboard__principal-aparece .5s ease-in-out .5s both;
 }
 

@@ -5,7 +5,7 @@ import listHighPriority from '@iconify/icons-cil/list-high-priority'
 import './Dashboard.css'
 import Lateral from './Lateral'
 import { Switch, Route, useHistory } from 'react-router'
-import Mapa from './Mapa'
+import Inicio from './Inicio'
 import ListaPacientes from './ListaPacientes'
 
 const Dashboard = () => {
@@ -21,15 +21,15 @@ const Dashboard = () => {
             <InlineIcon className="Dashboard__logo_icono" icon={listHighPriority} /> GG BIO
           </div>
         </div>
-        <div className="Dashboard__barra_usuario">
-          Nombre usuario
+        <div className="Dashboard__barra_usuario" onClick={() => history.push('/')}>
+          Cerrar sesión
         </div>
       </div>
       <div className="Dashboard__contenido">
         <Lateral />
         <div className="Dashboard__principal">
           <Switch>
-            <Route path="/dashboard/inicio" component={Mapa} />
+            <Route path="/dashboard/inicio" component={Inicio} />
             <Route path="/dashboard/pacientes" component={ListaPacientes} />
           </Switch>
         </div>

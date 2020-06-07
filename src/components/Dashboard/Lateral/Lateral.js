@@ -1,7 +1,7 @@
 import React from 'react'
 import './Lateral.css'
 import { NavLink } from 'react-router-dom'
-import { Icon, InlineIcon } from '@iconify/react'
+import { InlineIcon } from '@iconify/react'
 import homeIcon from '@iconify/icons-vs/globe'
 import seniorIcon from '@iconify/icons-vs/senior'
 
