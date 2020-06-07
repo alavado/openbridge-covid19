@@ -39,3 +39,7 @@
   background-color: #1781FF;
   color: white;
 }
+
+.Landing__cta:hover {
+  filter: brightness(115%);
+}

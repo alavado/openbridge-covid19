@@ -5,6 +5,7 @@
 
 .Navegacion__logo {
   padding: 1em;
+  cursor: pointer;
 }
 
 .Navegacion__nombre {
@@ -21,4 +22,5 @@
   font-size: .8em;
   margin-left: 3.25em;
   font-weight: 600;
+  cursor: pointer;
 }

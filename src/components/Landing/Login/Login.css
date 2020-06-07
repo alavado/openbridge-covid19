@@ -13,6 +13,7 @@
   flex-direction: row;
   align-items: center;
   box-shadow: 0 .15em 1em rgba(0, 0, 0, .1);
+  animation: Login-aparece .25s ease-in-out both;
 }
 
 .Login__logo {
@@ -44,6 +45,10 @@
   color: white;
 }
 
+.Login__boton:hover {
+  filter: brightness(115%);
+}
+
 .Login__input {
   padding: .5em 1em;
   margin: .25em 0;
@@ -51,4 +56,15 @@
   background-color: #eaebeb;
   border-radius: 1em;
   outline: none;
+}
+
+@keyframes Login-aparece {
+  0% {
+    opacity: 0;
+    transform: translateY(1em);
+  }
+  100% {
+    opacity: 100;
+    transform: translateY(0);
+  }
 }

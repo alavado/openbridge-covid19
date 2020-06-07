@@ -43,7 +43,8 @@ const MiniaturaListaPacientes = () => {
           .map((d, i) => ({
             nombre: nombreAleatorio(d.g),
             foto: d.photo,
-            score: 90 - i * 3
+            score: (10 - i * .3).toLocaleString('de-DE'),
+            edad: Math.floor(60 + 35 * Math.random()) 
         }))
       )
     }
@@ -67,8 +68,13 @@ const MiniaturaListaPacientes = () => {
             className="MiniaturaListaPacientes__encabezado_categoria"
             style={{ backgroundColor: categoria.color }}
           >
-            <InlineIcon icon={seniorIcon} />
-            <h1 className="MiniaturaListaPacientes__titulo_categoria">{categoria.nombre}</h1>
+            <div className="MiniaturaListaPacientes__encabezado_categoria_izquierda">
+              <InlineIcon icon={seniorIcon} />
+              <h1 className="MiniaturaListaPacientes__titulo_categoria">{categoria.nombre}</h1>
+            </div>
+            <div className="MiniaturaListaPacientes__encabezado_categoria_derecha">
+              score
+            </div>
           </div>
           <div className="MiniaturaListaPacientes__categoria">
             {pacientes.slice(i * pacientesPorCategoria, (i + 1) * pacientesPorCategoria).map((p, i) => (
@@ -82,8 +88,9 @@ const MiniaturaListaPacientes = () => {
                     src={p.foto}
                     alt={`foto del paciente ${p.nombre}`}
                   />
-                  <div className="MiniaturaListaPacientes__nombre">
-                    {p.nombre}
+                  <div className="MiniaturaListaPacientes__datos">
+                    <div className="MiniaturaListaPacientes__nombre">{p.nombre}</div>
+                    <div className="MiniaturaListaPacientes__edad">{p.edad} años</div>
                   </div>
                 </div>
                 <div

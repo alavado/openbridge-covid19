@@ -1,7 +1,10 @@
 import React from 'react'
 import './Login.css'
+import { useHistory } from 'react-router'
 
 const Login = () => {
+
+  const history = useHistory()
 
   const login = e => {
     e.preventDefault()
@@ -21,7 +24,13 @@ const Login = () => {
             <input className="Login__input" type="password" />
           </div>
           <div className="Login__campo">
-            <button className="Login__boton" type="submit">Ingresar</button>
+            <button
+              className="Login__boton"
+              type="submit"
+              onClick={() => history.push('/dashboard')}
+            >
+              Ingresar
+            </button>
           </div>
         </form>
       </div>
