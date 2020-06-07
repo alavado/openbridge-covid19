@@ -1,20 +1,20 @@
-.Dashboard {
+.Intranet {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-.Dashboard__barra {
+.Intranet__barra {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: .5em 1em;
-  animation: Dashboard__barra-aparece .5s ease-in-out .5s both;
+  animation: Intranet__barra-aparece .5s ease-in-out .5s both;
   box-shadow: 0em .05em .25em rgba(0, 0, 0, 0.1);
   background-image: linear-gradient(45deg, rgba(47, 141, 251, 0.92) 0%, #2FF2DA 100%);
 }
 
-@keyframes Dashboard__barra-aparece {
+@keyframes Intranet__barra-aparece {
   0% {
     transform: translateY(-100%);
   }
@@ -23,20 +23,30 @@
   }
 }
 
-.Dashboard__logo {
+.Intranet__logo {
   cursor: pointer;
 }
 
-.Dashboard__logo_icono {
+.Intranet__logo_icono {
   margin-right: .25em;
 }
 
-.Dashboard__logo_nombre {
+.Intranet__logo_nombre {
   font-weight: bold;
   color: white;
+  display: flex;
+  align-items: center;
 }
 
-.Dashboard__barra_usuario {
+.Intranet__nombre_centro {
+  font-weight: 500;
+  padding-left: .75em;
+  margin-left: .75em;
+  font-size: .8em;
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.Intranet__barra_usuario {
   color: white;
   font-weight: 500;
   font-size: .8em;
@@ -44,18 +54,18 @@
   cursor: pointer;
 }
 
-.Dashboard__contenido {
+.Intranet__contenido {
   display: flex;
   flex: 1;
 }
 
-.Dashboard__principal {
+.Intranet__principal {
   flex: 1;
   display: flex;
-  animation: Dashboard__principal-aparece .5s ease-in-out .5s both;
+  animation: Intranet__principal-aparece .5s ease-in-out .5s both;
 }
 
-@keyframes Dashboard__principal-aparece {
+@keyframes Intranet__principal-aparece {
   0% {
     opacity: 0;
   }

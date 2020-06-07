@@ -27,7 +27,7 @@ const Login = () => {
             <button
               className="Login__boton"
               type="submit"
-              onClick={() => history.push('/dashboard')}
+              onClick={() => history.push('/intranet')}
             >
               Ingresar
             </button>

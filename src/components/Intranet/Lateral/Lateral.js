@@ -12,14 +12,14 @@ const Lateral = () => {
         <NavLink
           activeClassName="Lateral__link--activo"
           className="Lateral__link"
-          to="/dashboard/inicio"
+          to="/intranet/inicio"
         >
           <InlineIcon className="Lateral__icono_link" icon={homeIcon} /> Inicio
         </NavLink>
         <NavLink
           activeClassName="Lateral__link--activo"
           className="Lateral__link"
-          to="/dashboard/pacientes"
+          to="/intranet/pacientes"
         >
           <InlineIcon className="Lateral__icono_link" icon={seniorIcon} /> Pacientes
         </NavLink>
